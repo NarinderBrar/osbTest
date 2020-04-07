@@ -2,20 +2,20 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/master/Schemas/NeuroML2/NeuroML_v2beta2.xsd"
-    id="SingleCompMuscleCell">
-    
+    id="vNeuron_Sensor">
+
     <include href="ca_boyle.channel.nml"/>
     <include href="k_fast.channel.nml"/>
     <include href="k_slow.channel.nml"/>
     <include href="Leak.channel.nml"/>
     <include href="CaPool.nml"/>
-    
 
-    <cell id="SingleCompMuscleCell">
+
+    <cell id="vNeuron_Sensor">
 
         <notes>Only muscle cell body...</notes>
 
-        <morphology id="morphology_SingleCompMuscleCell">
+        <morphology id="morphology_vNeuron_Sensor">
 
             <segment id="0" name="soma">
                 <proximal x="0.0" y="0.0" z="0.0" diameter="10"/>
@@ -46,11 +46,11 @@
             </membraneProperties>
 
             <intracellularProperties>
-                
-                <species id="ca" 
-                         ion="ca" 
-                         concentrationModel="CaPool" 
-                         initialConcentration="0 mM" 
+
+                <species id="ca"
+                         ion="ca"
+                         concentrationModel="CaPool"
+                         initialConcentration="0 mM"
                          initialExtConcentration="2E-6 mol_per_cm3"/>  <!-- Ext conc is not used here -->
 
                 <resistivity value="0.1 kohm_cm"/>
