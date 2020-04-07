@@ -99,7 +99,18 @@
             <input id="0" target="../iafPop_Sensor/0/iafNeuron_Sensor" destination="synapses"/>
             <input id="1" target="../iafPop_Sensor/1/iafNeuron_Sensor" destination="synapses"/>
             <input id="2" target="../iafPop_Sensor/2/iafNeuron_Sensor" destination="synapses"/>
-            
+            <input id="3" target="../iafPop_Sensor/3/iafNeuron_Sensor" destination="synapses"/>
+            <input id="4" target="../iafPop_Sensor/4/iafNeuron_Sensor" destination="synapses"/>
+            <input id="5" target="../iafPop_Sensor/5/iafNeuron_Sensor" destination="synapses"/>
+            <input id="6" target="../iafPop_Sensor/6/iafNeuron_Sensor" destination="synapses"/>
+            <input id="7" target="../iafPop_Sensor/7/iafNeuron_Sensor" destination="synapses"/>
+            <input id="8" target="../iafPop_Sensor/8/iafNeuron_Sensor" destination="synapses"/>
+            <input id="9" target="../iafPop_Sensor/9/iafNeuron_Sensor" destination="synapses"/>
+            <input id="10" target="../iafPop_Sensor/10/iafNeuron_Sensor" destination="synapses"/>
+            <input id="11" target="../iafPop_Sensor/11/iafNeuron_Sensor" destination="synapses"/>
+            <input id="12" target="../iafPop_Sensor/12/iafNeuron_Sensor" destination="synapses"/>
+            <input id="13" target="../iafPop_Sensor/13/iafNeuron_Sensor" destination="synapses"/>
+            <input id="14" target="../iafPop_Sensor/14/iafNeuron_Sensor" destination="synapses"/>          
         </inputList>
     </network>
 </neuroml>
