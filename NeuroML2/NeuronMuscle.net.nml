@@ -6,7 +6,9 @@
 
     <expTwoSynapse id="syn0" erev="0mV" gbase="25nS" tauDecay="10ms" tauRise="1ms"/>
 
-    <pulseGenerator id="offset_current" delay="10ms" duration="30000ms" amplitude="0.45nA"/>
+    <pulseGenerator id="input_pop_1" delay="10ms" duration="30000ms" amplitude="0.45nA"/>
+    <pulseGenerator id="input_pop_2" delay="20ms" duration="30000ms" amplitude="0.45nA"/>
+    <pulseGenerator id="input_pop_3" delay="30ms" duration="30000ms" amplitude="0.45nA"/>
 
     <iafCell id="iafNeuron_Sensor" reset="-70.0mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
     <iafCell id="iafNeuron_Motor" reset="-70.0mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
@@ -95,17 +97,21 @@
           <connection preCellId="../iafPop_Sensor/14/iafNeuron_Sensor" postCellId="../iafPop_Motor/2/iafNeuron_Motor" id="14"/>
         </projection>
 
-        <inputList id="offset_stim" component="offset_current" population="iafNeuron_Sensor">
+        <inputList id="offset_stim1" component="input_pop_1" population="iafNeuron_Sensor">
             <input id="0" target="../iafPop_Sensor/0/iafNeuron_Sensor" destination="synapses"/>
             <input id="1" target="../iafPop_Sensor/1/iafNeuron_Sensor" destination="synapses"/>
             <input id="2" target="../iafPop_Sensor/2/iafNeuron_Sensor" destination="synapses"/>
             <input id="3" target="../iafPop_Sensor/3/iafNeuron_Sensor" destination="synapses"/>
-            <input id="4" target="../iafPop_Sensor/4/iafNeuron_Sensor" destination="synapses"/>
+            <input id="4" target="../iafPop_Sensor/4/iafNeuron_Sensor" destination="synapses"/>        
+        </inputList>
+        <inputList id="offset_stim2" component="input_pop_2" population="iafNeuron_Sensor">
             <input id="5" target="../iafPop_Sensor/5/iafNeuron_Sensor" destination="synapses"/>
             <input id="6" target="../iafPop_Sensor/6/iafNeuron_Sensor" destination="synapses"/>
             <input id="7" target="../iafPop_Sensor/7/iafNeuron_Sensor" destination="synapses"/>
             <input id="8" target="../iafPop_Sensor/8/iafNeuron_Sensor" destination="synapses"/>
-            <input id="9" target="../iafPop_Sensor/9/iafNeuron_Sensor" destination="synapses"/>
+            <input id="9" target="../iafPop_Sensor/9/iafNeuron_Sensor" destination="synapses"/>         
+        </inputList>
+        <inputList id="offset_stim3" component="input_pop_3" population="iafNeuron_Sensor">
             <input id="10" target="../iafPop_Sensor/10/iafNeuron_Sensor" destination="synapses"/>
             <input id="11" target="../iafPop_Sensor/11/iafNeuron_Sensor" destination="synapses"/>
             <input id="12" target="../iafPop_Sensor/12/iafNeuron_Sensor" destination="synapses"/>
