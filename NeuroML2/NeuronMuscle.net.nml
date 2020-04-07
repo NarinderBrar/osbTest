@@ -5,10 +5,11 @@
          id="NeuronMuscle">
 
     <expTwoSynapse id="syn0" erev="0mV" gbase="25nS" tauDecay="10ms" tauRise="1ms"/>
-    <pulseGenerator id="offset_current" delay="10ms" duration="290ms" amplitude="0.45nA"/>
 
-    <iafCell id="iafNeuron_Sensor" reset="-60.5mV" C="0.025nF" thresh="-60mV" leakConductance="0.02uS" leakReversal="-70mV"/>
-    <iafCell id="iafNeuron_Motor" reset="-60.5mV" C="0.025nF" thresh="-60mV" leakConductance="0.02uS" leakReversal="-70mV"/>
+    <pulseGenerator id="offset_current" delay="10ms" duration="30000ms" amplitude="0.45nA"/>
+
+    <iafCell id="iafNeuron_Sensor" reset="-70.0mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
+    <iafCell id="iafNeuron_Motor" reset="-70.0mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
 
     <network id="net1">
 
