@@ -7,8 +7,8 @@
     <expTwoSynapse id="syn0" gbase="2nS" erev="0mV" tauDecay="10ms" tauRise="0.5ms"/>
     <poissonFiringSynapse id="poissonFiringSyn" averageRate="150 Hz" synapse="syn0" spikeTarget="./syn0"/>
 
-    <iafCell id="iafNeuron_Sensor" reset="-70mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
-    <iafCell id="iafNeuron_Motor" reset="-70mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
+    <iafCell id="iafNeuron_Sensor" reset="-60.5mV" C="0.025nF" thresh="-60mV" leakConductance="0.02uS" leakReversal="-70mV"/>
+    <iafCell id="iafNeuron_Motor" reset="-60.5mV" C="0.025nF" thresh="-60mV" leakConductance="0.02uS" leakReversal="-70mV"/>
 
     <network id="net1">
 
