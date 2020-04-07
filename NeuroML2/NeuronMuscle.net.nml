@@ -71,7 +71,7 @@
               </instance>
           </population>
 
-          <population id="vPop_Sensor" component="vNeuron_Sensor" size="15" type="populationList">
+          <population id="vPop_Sensor" component="SingleCompMuscle" size="15" type="populationList">
               <property tag="color" value="0.6 0 0"/>
               <instance id="0">
                   <location x="-50" y="60" z="0"/>
@@ -136,7 +136,7 @@
               </instance>
           </population>
 
-          <population id="vPop_Motor" component="vNeuron_Motor"  size="3" type="populationList">
+          <population id="vPop_Motor" component="SingleCompMuscle"  size="3" type="populationList">
               <instance id="0">
                   <location x="20" y="-40" z="10"/>
               </instance>
