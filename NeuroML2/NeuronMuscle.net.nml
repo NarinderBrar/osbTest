@@ -9,7 +9,7 @@
 
     <expTwoSynapse id="exc_syn_1conns" erev="0mV" gbase="25nS" tauDecay="10ms" tauRise="1ms"/>
 
-    <iafCell id="generic_iaf_cell" reset="-70mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
+    <iafCell id="iafNeuron_Sensor" reset="-70mV" C="0.4nF" thresh="-50mV" leakConductance="0.02uS" leakReversal="-70mV"/>
 
     <pulseGenerator id="offset_current" delay="10ms" duration="290ms" amplitude="0.45nA"/>
     <pulseGenerator id="offsetToMin75" delay="0ms" duration="1000ms" amplitude="-120 pA" />
@@ -17,30 +17,146 @@
 
     <network id="net1">
 
-        <population id="neuron" component="generic_iaf_cell" type="populationList">
-            <property tag="color" value="1 0 .4"/>
-            <instance id="0">
-                <location y="0" x="0" z="0"/>
-            </instance>
-        </population>
+      <network id="network" type="networkWithTemperature" temperature="34 degC">
+          <population id="iafPop_Sensor" component="iafNeuron_Sensor" size="15" type="populationList">
+            <property tag="color" value="0.4 0.0 0.0"/>
+              <instance id="0">
+                  <location x="-50" y="100" z="0"/>
+              </instance>
+              <instance id="1">
+                  <location x="-20" y="130" z="-30"/>
+              </instance>
+              <instance id="2">
+                  <location x="10" y="130" z="0"/>
+              </instance>
+              <instance id="3">
+                  <location x="-20" y="140" z="25"/>
+              </instance>
+              <instance id="4">
+                  <location x="50" y="100" z="0"/>
+              </instance>
 
-        <population id="muscle" component="SingleCompMuscleCell" type="populationList">
-            <property tag="color" value="0 .6 0"/>
-            <instance id="0">
-                <location y="0" x="50" z="0"/>
-            </instance>
-        </population>
 
-        <projection id="N_M" postsynapticPopulation="muscle" presynapticPopulation="neuron" synapse="exc_syn_1conns">
-            <connection preCellId="../neuron/0/generic_iaf_cell" postCellId="../muscle/0/SingleCompMuscleCell" id="0"/>
+              <instance id="5">
+                  <location x="-40" y="140" z="-20"/>
+              </instance>
+              <instance id="6">
+                  <location x="-40" y="130" z="20"/>
+              </instance>
+              <instance id="7">
+                  <location x="-10" y="140" z="0"/>
+              </instance>
+              <instance id="8">
+                  <location x="40" y="130" z="-25"/>
+              </instance>
+              <instance id="9">
+                  <location x="40" y="145" z="20"/>
+              </instance>
+
+              <instance id="10">
+                  <location x="0" y="125" z="-20"/>
+              </instance>
+              <instance id="11">
+                  <location x="0" y="125" z="20"/>
+              </instance>
+              <instance id="12">
+                  <location x="30" y="130" z="-25"/>
+              </instance>
+              <instance id="13">
+                  <location x="20" y="150" z="0"/>
+              </instance>
+              <instance id="14">
+                  <location x="20" y="130" z="30"/>
+              </instance>
+          </population>
+
+          <population id="vPop_Sensor" component="vNeuron_Sensor" size="15" type="populationList">
+              <property tag="color" value="0.6 0 0"/>
+              <instance id="0">
+                  <location x="-50" y="60" z="0"/>
+              </instance>
+              <instance id="1">
+                  <location x="-20" y="90" z="-30"/>
+              </instance>
+              <instance id="2">
+                  <location x="10" y="90" z="0"/>
+              </instance>
+              <instance id="3">
+                  <location x="-20" y="100" z="25"/>
+              </instance>
+              <instance id="4">
+                  <location x="50" y="60" z="0"/>
+              </instance>
+
+              <instance id="5">
+                  <location x="-40" y="100" z="-20"/>
+              </instance>
+              <instance id="6">
+                  <location x="-40" y="90" z="20"/>
+              </instance>
+              <instance id="7">
+                  <location x="-10" y="100" z="0"/>
+              </instance>
+              <instance id="8">
+                  <location x="40" y="90" z="-25"/>
+              </instance>
+              <instance id="9">
+                  <location x="40" y="105" z="20"/>
+              </instance>
+
+              <instance id="10">
+                  <location x="0" y="85" z="-20"/>
+              </instance>
+              <instance id="11">
+                  <location x="0" y="85" z="20"/>
+              </instance>
+              <instance id="12">
+                  <location x="30" y="90" z="-25"/>
+              </instance>
+              <instance id="13">
+                  <location x="20" y="110" z="0"/>
+              </instance>
+              <instance id="14">
+                  <location x="20" y="90" z="30"/>
+              </instance>
+
+          </population>
+
+          <population id="iafPop_Motor" component="iafNeuron_Motor" size="3" type="populationList">
+            <property tag="color" value="0 0 0.2"/>
+              <instance id="0">
+                  <location x="20" y="45" z="10"/>
+              </instance>
+              <instance id="1">
+                  <location x="-20" y="45" z="10"/>
+              </instance>
+              <instance id="2">
+                  <location x="0" y="45" z="-20"/>
+              </instance>
+          </population>
+
+          <population id="vPop_Motor" component="vNeuron_Motor"  size="3" type="populationList">
+              <instance id="0">
+                  <location x="20" y="-40" z="10"/>
+              </instance>
+              <instance id="1">
+                  <location x="-20" y="-40" z="10"/>
+              </instance>
+              <instance id="2">
+                  <location x="0" y="-40" z="-20"/>
+              </instance>
+          </population>
+
+        <projection id="N_M" postsynapticPopulation="iafPop_Motor" presynapticPopulation="iafPop_Sensor" synapse="exc_syn_1conns">
+            <connection preCellId="../iafPop_Sensor/0/iafNeuron_Sensor" postCellId="../iafPop_Motor/0/SingleCompMuscleCell" id="0"/>
         </projection>
 
-        <inputList id="offset_stim" component="offset_current" population="generic_iaf_cell">
-            <input id="0" target="../neuron/0/generic_iaf_cell" destination="synapses"/>
+        <inputList id="offset_stim" component="offset_current" population="iafNeuron_Sensor">
+            <input id="0" target="../iafPop_Sensor/0/iafNeuron_Sensor" destination="synapses"/>
         </inputList>
 
-        <inputList id="offsetToMin75_stim" component="offsetToMin75" population="muscle">
-            <input id="0" target="../muscle/0/SingleCompMuscleCell" destination="synapses"/>
+        <inputList id="offsetToMin75_stim" component="offsetToMin75" population="iafPop_Motor">
+            <input id="0" target="../iafPop_Motor/0/SingleCompMuscleCell" destination="synapses"/>
         </inputList>
 
     </network>
