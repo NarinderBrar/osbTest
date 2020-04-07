@@ -19,7 +19,7 @@
 
             <segment id="0" name="soma">
                 <proximal x="0.0" y="0.0" z="0.0" diameter="10"/>
-                <distal x="0.0" y="0.0" z="10" diameter="10"/>
+                <distal x="0.0" y="0.0" z="5" diameter="10"/>
             </segment>
 
         </morphology>
