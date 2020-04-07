@@ -154,8 +154,46 @@
             </instance>
         </population>
 
-        <projection id="N_M" postsynapticPopulation="vPop_Motor" presynapticPopulation="iafPop_Sensor" synapse="exc_syn_1conns">
-            <connection preCellId="../iafPop_Sensor/0/iafNeuron_Sensor" postCellId="../vPop_Motor/0/vNeuron_Motor" id="0"/>
+        <projection id="proj_iafSensor_to_iafMotor" postsynapticPopulation="iafPop_Motor" presynapticPopulation="iafPop_Sensor" synapse="exc_syn_1conns">
+          <connection preCellId="../iafPop_Sensor/0/iafNeuron_Sensor" postCellId="../iafPop_Motor/0/iafNeuron_Motor" id="0"/>
+          <connection preCellId="../iafPop_Sensor/1/iafNeuron_Sensor" postCellId="../iafPop_Motor/0/iafNeuron_Motor" id="1"/>
+          <connection preCellId="../iafPop_Sensor/2/iafNeuron_Sensor" postCellId="../iafPop_Motor/0/iafNeuron_Motor" id="2"/>
+          <connection preCellId="../iafPop_Sensor/3/iafNeuron_Sensor" postCellId="../iafPop_Motor/0/iafNeuron_Motor" id="3"/>
+          <connection preCellId="../iafPop_Sensor/4/iafNeuron_Sensor" postCellId="../iafPop_Motor/0/iafNeuron_Motor" id="4"/>
+          <connection preCellId="../iafPop_Sensor/5/iafNeuron_Sensor" postCellId="../iafPop_Motor/1/iafNeuron_Motor" id="5"/>
+          <connection preCellId="../iafPop_Sensor/6/iafNeuron_Sensor" postCellId="../iafPop_Motor/1/iafNeuron_Motor" id="6"/>
+          <connection preCellId="../iafPop_Sensor/7/iafNeuron_Sensor" postCellId="../iafPop_Motor/1/iafNeuron_Motor" id="7"/>
+          <connection preCellId="../iafPop_Sensor/8/iafNeuron_Sensor" postCellId="../iafPop_Motor/1/iafNeuron_Motor" id="8"/>
+          <connection preCellId="../iafPop_Sensor/9/iafNeuron_Sensor" postCellId="../iafPop_Motor/1/iafNeuron_Motor" id="9"/>
+          <connection preCellId="../iafPop_Sensor/10/iafNeuron_Sensor" postCellId="../iafPop_Motor/2/iafNeuron_Motor" id="10"/>
+          <connection preCellId="../iafPop_Sensor/11/iafNeuron_Sensor" postCellId="../iafPop_Motor/2/iafNeuron_Motor" id="11"/>
+          <connection preCellId="../iafPop_Sensor/12/iafNeuron_Sensor" postCellId="../iafPop_Motor/2/iafNeuron_Motor" id="12"/>
+          <connection preCellId="../iafPop_Sensor/13/iafNeuron_Sensor" postCellId="../iafPop_Motor/2/iafNeuron_Motor" id="13"/>
+          <connection preCellId="../iafPop_Sensor/14/iafNeuron_Sensor" postCellId="../iafPop_Motor/2/iafNeuron_Motor" id="14"/>
+        </projection>
+
+        <projection id="proj_iSensor_to_vSensor" postsynapticPopulation="vPop_Sensor" presynapticPopulation="iafPop_Sensor" synapse="exc_syn_1conns">
+          <connection preCellId="../iafPop_Sensor/0/iafNeuron_Sensor" postCellId="../vPop_Sensor/0/vNeuron_Sensor" id="0"/>
+          <connection preCellId="../iafPop_Sensor/1/iafNeuron_Sensor" postCellId="../vPop_Sensor/1/vNeuron_Sensor" id="1"/>
+          <connection preCellId="../iafPop_Sensor/2/iafNeuron_Sensor" postCellId="../vPop_Sensor/2/vNeuron_Sensor" id="2"/>
+          <connection preCellId="../iafPop_Sensor/3/iafNeuron_Sensor" postCellId="../vPop_Sensor/3/vNeuron_Sensor" id="3"/>
+          <connection preCellId="../iafPop_Sensor/4/iafNeuron_Sensor" postCellId="../vPop_Sensor/4/vNeuron_Sensor" id="4"/>
+          <connection preCellId="../iafPop_Sensor/5/iafNeuron_Sensor" postCellId="../vPop_Sensor/5/vNeuron_Sensor" id="5"/>
+          <connection preCellId="../iafPop_Sensor/6/iafNeuron_Sensor" postCellId="../vPop_Sensor/6/vNeuron_Sensor" id="6"/>
+          <connection preCellId="../iafPop_Sensor/7/iafNeuron_Sensor" postCellId="../vPop_Sensor/7/vNeuron_Sensor" id="7"/>
+          <connection preCellId="../iafPop_Sensor/8/iafNeuron_Sensor" postCellId="../vPop_Sensor/8/vNeuron_Sensor" id="8"/>
+          <connection preCellId="../iafPop_Sensor/9/iafNeuron_Sensor" postCellId="../vPop_Sensor/9/vNeuron_Sensor" id="9"/>
+          <connection preCellId="../iafPop_Sensor/10/iafNeuron_Sensor" postCellId="../vPop_Sensor/10/vNeuron_Sensor" id="10"/>
+          <connection preCellId="../iafPop_Sensor/11/iafNeuron_Sensor" postCellId="../vPop_Sensor/11/vNeuron_Sensor" id="11"/>
+          <connection preCellId="../iafPop_Sensor/12/iafNeuron_Sensor" postCellId="../vPop_Sensor/12/vNeuron_Sensor" id="12"/>
+          <connection preCellId="../iafPop_Sensor/13/iafNeuron_Sensor" postCellId="../vPop_Sensor/13/vNeuron_Sensor" id="13"/>
+          <connection preCellId="../iafPop_Sensor/14/iafNeuron_Sensor" postCellId="../vPop_Sensor/14/vNeuron_Sensor" id="14"/>
+        </projection>
+
+        <projection id="proj_iMotor_to_vMotor" postsynapticPopulation="vPop_Motor" presynapticPopulation="iafPop_Motor" synapse="exc_syn_1conns">
+          <connection preCellId="../iafPop_Motor/0/iafNeuron_Motor" postCellId="../vPop_Motor/0/vNeuron_Motor" id="0"/>
+          <connection preCellId="../iafPop_Motor/1/iafNeuron_Motor" postCellId="../vPop_Motor/1/vNeuron_Motor" id="1"/>
+          <connection preCellId="../iafPop_Motor/2/iafNeuron_Motor" postCellId="../vPop_Motor/2/vNeuron_Motor" id="2"/>
         </projection>
 
         <inputList id="offset_stim" component="offset_current" population="iafNeuron_Sensor">
