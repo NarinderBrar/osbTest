@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd"
          id="NeuronMuscle">
 
-    <expTwoSynapse id="syn0" gbase="2nS" erev="0mV" tauDecay="10ms" tauRise="0.5ms"/>
-    <poissonFiringSynapse id="poissonFiringSyn" averageRate="150 Hz" synapse="syn0" spikeTarget="./syn0"/>
+    <expTwoSynapse id="syn0" erev="0mV" gbase="25nS" tauDecay="10ms" tauRise="1ms"/>
+    <pulseGenerator id="offset_current" delay="10ms" duration="290ms" amplitude="0.45nA"/>
 
     <iafCell id="iafNeuron_Sensor" reset="-60.5mV" C="0.025nF" thresh="-60mV" leakConductance="0.02uS" leakReversal="-70mV"/>
     <iafCell id="iafNeuron_Motor" reset="-60.5mV" C="0.025nF" thresh="-60mV" leakConductance="0.02uS" leakReversal="-70mV"/>
@@ -94,12 +94,11 @@
           <connection preCellId="../iafPop_Sensor/14/iafNeuron_Sensor" postCellId="../iafPop_Motor/2/iafNeuron_Motor" id="14"/>
         </projection>
 
-        <inputList id="offset_stim" component="poissonFiringSyn" population="iafNeuron_Sensor">
+        <inputList id="offset_stim" component="offset_current" population="iafNeuron_Sensor">
             <input id="0" target="../iafPop_Sensor/0/iafNeuron_Sensor" destination="synapses"/>
             <input id="1" target="../iafPop_Sensor/1/iafNeuron_Sensor" destination="synapses"/>
             <input id="2" target="../iafPop_Sensor/2/iafNeuron_Sensor" destination="synapses"/>
-            <input id="3" target="../iafPop_Sensor/3/iafNeuron_Sensor" destination="synapses"/>
-            <input id="4" target="../iafPop_Sensor/4/iafNeuron_Sensor" destination="synapses"/>
+            
         </inputList>
     </network>
 </neuroml>
